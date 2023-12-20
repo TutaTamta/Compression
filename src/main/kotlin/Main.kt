@@ -38,36 +38,6 @@ fun lz77Compress(input: String, window: Int, buffer: Int): List<Triple<Int, Int,
 
     return compressed
 }
-
-/*fun lzssCompress(input: String): List<Triple<Int, Int, Char>> {
-    val compressed = mutableListOf<Triple<Int, Int, Char>>()
-    var currentIndex = 0
-
-    while (currentIndex < input.length) {
-        var length = 0
-        var offset = 0
-
-        for (i in currentIndex - 1 downTo 0) {
-            val substring = input.substring(i, currentIndex)
-
-            if (substring.length > length && input.startsWith(substring, currentIndex)) {
-                length = substring.length
-                offset = currentIndex - i
-            }
-        }
-
-        if (length > 0) {
-            compressed.add(Triple(offset, length, '1'))
-            currentIndex += length
-        } else {
-            compressed.add(Triple(offset, length, input[currentIndex]))
-            currentIndex++
-        }
-    }
-
-    return compressed
-}*/
-
 fun lzssCompress(input: String, max_dictionary:Int, max_buffer:Int): MutableList<Array<String>> {
     val compressed: MutableList<Array<String>> = mutableListOf()
     var dictionary = ""
