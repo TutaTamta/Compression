@@ -64,8 +64,6 @@ fun lzssCompress(input: String, max_dictionary:Int, max_buffer:Int): MutableList
             "0'" + buffer[0] + "'"
         }
         compressed.add(arrayOf(code))
-        //  Я так и не поняла, почему так странно отображается массив при выводе в main,
-        //  так что пусть пока так будет. Программа то правильно работает
         print("( $code ) ")
 
         val shiftSize = max(length.toDouble(), 1.0).toInt()
